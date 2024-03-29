@@ -4,8 +4,8 @@ namespace App\Interfaces;
 
 use Illuminate\Database\Eloquent\Collection;
 
-interface TaskRepositoryInterface
+interface DeveloperRepositoryInterface
 {
     public function getAll(): Collection;
-    public function updateOrCreate(array $task): void;
+    public function updateOrCreate(array $developer): void;
 }

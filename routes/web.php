@@ -1,18 +1,17 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Developer;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    $developers = Developer::all();
+    $tasks = \App\Models\Task::all();
 });
+
+Route::get('plan', ['App\Http\Controllers\PlanController', 'index']);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

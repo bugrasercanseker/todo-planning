@@ -10,11 +10,11 @@ use Illuminate\Support\Facades\Log;
 
 class TaskProviderService
 {
-    private array $providers;
+    private array $adapters;
 
     public function __construct(TaskProviderOneAdapter $providerOneAdapter, TaskProviderTwoAdapter $providerTwoAdapter)
     {
-        $this->providers = [$providerOneAdapter, $providerTwoAdapter];
+        $this->adapters = [$providerOneAdapter, $providerTwoAdapter];
     }
 
     public function getTasks(): void
@@ -22,8 +22,8 @@ class TaskProviderService
         try {
             DB::beginTransaction();
 
-            foreach ($this->providers as $provider) {
-                $provider->getTasks();
+            foreach ($this->adapters as $adapter) {
+                $adapter->getTasks();
             }
 
             DB::commit();

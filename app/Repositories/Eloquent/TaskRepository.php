@@ -2,11 +2,17 @@
 
 namespace App\Repositories\Eloquent;
 
-use App\Interfaces\TaskRepositoryInterface;
 use App\Models\Task;
+use App\Interfaces\TaskRepositoryInterface;
+use Illuminate\Database\Eloquent\Collection;
 
 class TaskRepository implements TaskRepositoryInterface
 {
+
+    public function getAll(): Collection
+    {
+        return Task::all();
+    }
 
     public function updateOrCreate($task): void
     {
