@@ -6,12 +6,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    $developers = Developer::all();
-    $tasks = \App\Models\Task::all();
-});
-
-Route::get('plan', ['App\Http\Controllers\PlanController', 'index']);
+Route::get('/', ['App\Http\Controllers\PlanController', 'index']);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

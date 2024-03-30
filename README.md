@@ -68,12 +68,17 @@ Before you begin, ensure you have the following requirements:
     php artisan db:seed
     ```
 
-3. Build the project:
+8. Build the project:
 
     ```bash
     npm run build
+
+9. Run Get Tasks command:
+
+    ```bash
+    php artisan get:tasks
    
-9. Start the development server with Artisan or Valet:
+10. Start the development server with Artisan or Valet:
 
     ```bash
     php artisan serve
@@ -84,7 +89,7 @@ Before you begin, ensure you have the following requirements:
      ```bash
     valet link todo-planning
     ```
-10. Visit [http://127.0.0.1:8000](http://127.0.0.1:8000) or [http://todo-planning.test](http://todo-planning.test) with
+11. Visit [http://127.0.0.1:8000](http://127.0.0.1:8000) or [http://todo-planning.test](http://todo-planning.test) with
     your browser to make sure everything is up and running.
 
 ### Imagine the case
